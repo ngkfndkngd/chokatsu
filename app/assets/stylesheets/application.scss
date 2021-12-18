@@ -25,9 +25,15 @@
  * {
    margin: 0;
    padding: 0;
+   float: none;
+	 position: static;
    box-sizing: border-box;
    font-family: 'M PLUS 1p', sans-serif;
  }
+ 
+img {
+	height: auto;
+}
 
 // ロゴ
 h5{
@@ -116,4 +122,11 @@ h5:before {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 15px !important;  /*角を丸くする*/
+}
+
+/* 480px以下に適用されるCSS（スマホ用） */
+@media screen and (max-width: 375px) {
+  .img {
+    max-width: 375px;
+  }
 }

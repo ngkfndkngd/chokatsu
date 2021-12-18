@@ -7,7 +7,7 @@
 // topページ
 .main-visual {
   width: 100%; /* 横幅いっぱい */
-  height: 400px; /* 高さ300px */
+  height: 400px; /* 高さ400px */
   background-image: image-url("taitl.png");
   background-position:center top;                     /* 画像の表示位置を指定 */
   background-size:cover;                                 /* 画像のサイズを指定  */
@@ -48,4 +48,24 @@
 	width: 100%;
 	text-align: center;
 	font-size: 25px;
+}
+
+/* 375px以下に適用されるCSS（スマホ用） */
+@media screen and (max-width: 375px) {
+  .main-visual {
+  max-width: 375px;
+  background-image: image-url("taitl.png");
+  }
+  
+  .tag_box {
+    padding-left: 30px;
+  }
+  .tag_img-top {
+    width: 100px;
+    height: 100px;
+  }
+  
+  // .card {
+  //   max-width: 375px;
+  // }
 }
