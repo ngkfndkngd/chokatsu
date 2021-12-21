@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
+    <div class="col-12">
       <div class="main-visual">
         <div class="main-visual-content">
         </div>
       </div>
     </div>
    </div>
-   
+
   <div class="texts-wrapper tag-body">
     <div class="contents-title text-center">
       <h2 class="tag_title my-4">
@@ -18,10 +18,10 @@
           <div class="tag_box ml-4">
             <% @tags.each do |tag| %>
               <%= link_to tag_path(tag), class: "tag_item" do %>
-                <p class="tag_img">
-                 <%= attachment_image_tag tag, :tag_image, :fill, 200, 200, class:"tag_img-top" %>
+                <p class="tag_img offset-lg-0 offset-3">
+                 <%= attachment_image_tag tag, :tag_image, class:"tag_img-top" %>
                 </p>
-                <p class="tag_name">
+                <p class="tag_name offset-lg-0 offset-6">
                 <%= tag.name %>
                 </p>
               <% end %>
@@ -38,39 +38,41 @@
             <div class="row">
               <div class="col-12">
                 <div class="card-deck">
-                <% @recipe_ranks.each.with_index(1) do |recipe, i| %>
-                <div class="col-3">
-                  <p>
-                    <i class="fas fa-crown"></i>
-                    <span class="icon_layers_text"><%= i %>位</span>
-                  </p>
-                  <div class="card h-90">
-                    <%= link_to recipe_path(recipe) do %>
-                      <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, fallback:"no_image.jpg", class:"card-img-top"; %><br>
-                    <% end %>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
-                        </div>
-                        <div class="col-10">
-                          <p class="card-title">
-                            <%= link_to recipe_path(recipe), class:"text-dark" do %>
-                              <span> <%= recipe.name %></span>
-                            <% end %>
-                          </p>
-                          <p class="card-text">
-                            <%= link_to user_path(recipe.user.id),class:"link-recipe mr-3" do %>
-                              <span><i class="fas fa-user"></i><%= recipe.user.name %></span>
-                            <% end %>
-                          </p>
+                  <% @recipe_ranks.each.with_index(1) do |recipe, i| %>
+                  <div class="col-lg-3 col-12">
+                    <p>
+                      <i class="fas fa-crown"></i>
+                      <span class="icon_layers_text"><%= i %>位</span>
+                    </p>
+                    <div class="col-lg-12 col-12">
+                      <div class="card h-100">
+                        <%= link_to recipe_path(recipe) do %>
+                          <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, fallback:"no_image.jpg", class:"card-img-top"; %><br>
+                        <% end %>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-2">
+                              <%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
+                            </div>
+                            <div class="col-10">
+                              <p class="card-title">
+                                <%= link_to recipe_path(recipe), class:"text-dark" do %>
+                                  <span> <%= recipe.name %></span>
+                                <% end %>
+                              </p>
+                              <p class="card-text">
+                                <%= link_to user_path(recipe.user.id),class:"link-recipe mr-3" do %>
+                                  <span><i class="fas fa-user"></i><%= recipe.user.name %></span>
+                                <% end %>
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  </div>
-                <% end %>
-              </div>
+                  <% end %>
+                </div>
             </div>
           </div>
       </div>
@@ -82,34 +84,37 @@
             <div class="row">
               <div class="col-12">
                 <div class="card-deck">
-                <% @recipes.each do |recipe| %>
-                <div class="col-3">
-                  <div class="card h-100">
-                    <%= link_to recipe_path(recipe) do %>
-                      <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, class:"card-img-top"; %><br>
-                    <% end %>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
-                        </div>
-                        <div class="col-10">
-                          <p class="card-title">
-                            <%= link_to recipe_path(recipe), class:"text-dark" do %>
-                              <span> <%= recipe.name %></span>
-                            <% end %>
-                          </p>
-                          <p class="card-text">
-                            <%= link_to user_path(recipe.user.id),class:"link-recipe mr-3" do %>
-                              <span><i class="fas fa-user"></i><%= recipe.user.name %></span>
-                            <% end %>
-                          </p>
+                  <% @recipes.each do |recipe| %>
+                  <div class="col-lg-3 col-12">
+                    <div class="col-lg-12 col-12">
+                      <div class="card h-100">
+                        <%= link_to recipe_path(recipe) do %>
+                          <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, class:"card-img-top"; %><br>
+                        <% end %>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-2">
+                              <%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
+                            </div>
+                            <div class="col-10">
+                              <p class="card-title">
+                                <%= link_to recipe_path(recipe), class:"text-dark" do %>
+                                  <span> <%= recipe.name %></span>
+                                <% end %>
+                              </p>
+                              <p class="card-text">
+                                <%= link_to user_path(recipe.user.id),class:"link-recipe mr-3" do %>
+                                  <span><i class="fas fa-user"></i><%= recipe.user.name %></span>
+                                <% end %>
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  </div>
-                <% end %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>

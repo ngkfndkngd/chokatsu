@@ -34,6 +34,11 @@
     font-size: 20px;
 }
 
+.tag_img-top{
+  width: 200px; 
+  height: 200px; 
+  background: #FFF;
+}
 
 
 .fa-crown {
@@ -42,30 +47,10 @@
 }
 
 .icon_layers_text{
-	position: absolute;
+// 	position: absolute;
 	left: 0;
 	display: inline-block;
 	width: 100%;
 	text-align: center;
 	font-size: 25px;
-}
-
-/* 375px以下に適用されるCSS（スマホ用） */
-@media screen and (max-width: 375px) {
-  .main-visual {
-  max-width: 375px;
-  background-image: image-url("taitl.png");
-  }
-  
-  .tag_box {
-    padding-left: 30px;
-  }
-  .tag_img-top {
-    width: 100px;
-    height: 100px;
-  }
-  
-  // .card {
-  //   max-width: 375px;
-  // }
 }
