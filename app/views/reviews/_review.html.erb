@@ -3,7 +3,7 @@
     <% reviews.each do |review| %>
       <li class="list-items recipe-review">
         <p>
-          <%= attachment_image_tag review, :review_image, :fill, 200, 200, class:"card-img-review ml-5"; %>
+          <%= attachment_image_tag review, :review_image, :fill, 200, 200, class:"card-img-review ml-lg-5 offset-3" %>
         </p>
         <p class="recipe-title ml-3">
           <%= link_to user_path(review.user.id), class:"review-user-link" do %>
@@ -44,10 +44,11 @@
 
         //レスポンシブ対応させたい場合は以下も記述
         responsive: [{
-          breakpoint: 768, //画面幅768pxで以下のセッティング
+          breakpoint: 574, //画面幅768pxで以下のセッティング
           settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
           }
         }]
     });

@@ -1,10 +1,10 @@
 <div class="nested-fields">
-  <div class="row form-group col-8 offset-2">
-      <%= f.label :材料, class: "col-3" %>
-      <%= f.text_field :ingredient, class: "col-4 form-control", placeholder: "材料" %>
-      <%= f.text_field :amount, class: "form-control", placeholder: "分量",class:"offset-1 col-2" %>
-    <div class="offset-1 col-1 px-0 w-auto">
-      <%= link_to_remove_association "削除", f, class: "btn btn-secondary btn-block" %>
+  <div class="row form-group col-lg-8 col-12 offset-lg-2">
+      <%= f.label :材料, class: "col-lg-3 col-12" %>
+      <%= f.text_field :ingredient, class: "col-lg-4 col-5 form-control", placeholder: "材料" %>
+      <%= f.text_field :amount, class: "col-lg-2 col-3 mx-2 form-control", placeholder: "分量" %>
+    <div class="col-lg-1 col-3 mx-lg-5 px-0 w-auto">
+      <%= link_to_remove_association "削除", f, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>

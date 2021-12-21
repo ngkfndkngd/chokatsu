@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <% if current_user.id != @recipe.user.id %>
             <div class="row my-5">
-              <div class="col-8 offset-3">
+              <div class="col-lg-8 offset-lg-3 col-12">
                 <div class="recipes-reviews">
                   <%= form_with(model: [@recipe, @review], id: "new-review") do |f| %>
                     <%= f.attachment_field :review_image, class: "imag-review" %>
