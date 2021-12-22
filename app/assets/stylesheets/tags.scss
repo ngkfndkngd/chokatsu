@@ -1,3 +1,18 @@
 // Place all the styles related to the Tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ◯件の文字の大きさ
+
+ .recipe-count{
+   font-size: 30px;
+ }
+
+/* 576px以下に適用されるCSS（スマホ用） */
+@media screen and (max-width: 576px) {
+  
+ .nill_recipe_count{
+   font-size: 12px;
+ }
+ 
+}

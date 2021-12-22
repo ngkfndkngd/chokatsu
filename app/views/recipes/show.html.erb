@@ -49,7 +49,7 @@
           <% else %>
           <div class="recipe-btn">
               <%= link_to "レシピ編集", edit_recipe_path(@recipe.id), class: "mr-lg-3 mx-5 btn btn-outline-success" %>
-              <%= link_to "レシピ削除", recipe_path(@recipe.id), method:  :delete,data: {confirm: "本当に削除しますか？"}, class:  "btn btn-outline-danger" %>
+              <%= link_to "レシピ削除", recipe_path(@recipe.id), method:  :delete,data: {confirm: "本当に削除しますか？"}, class: "btn btn-outline-danger" %>
           </div>
           <% end %>
         <% end %>
