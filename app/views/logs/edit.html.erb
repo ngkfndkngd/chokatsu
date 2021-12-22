@@ -12,17 +12,17 @@
             <div class="btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-warning active mx-3 my-2">
                 <%= f.radio_button :record_status, :fine, {checked: true} %>
-                <%= image_tag 'すっきり.png', size: "110x100"%>
+                <%= image_tag 'logs0.png', size: "110x100"%>
                 <%= f.label :すっきり %>
               </label>
               <label class="btn btn-secondary active mx-3 my-2">
                 <%= f.radio_button :record_status, :low , {} %>
-                <%= image_tag 'もやもや.png', size: "110x100"%>
+                <%= image_tag 'logs1.png', size: "110x100"%>
                 <%= f.label :もやもや %>
               </label>
               <label class="btn btn-primary active mx-3 my-2">
                 <%= f.radio_button :record_status, :sick, {} %>
-                <%= image_tag 'さらさら.png', size: "110x100"%>
+                <%= image_tag 'logs2.png', size: "110x100"%>
                 <%= f.label :さらさら %>
               </label></br>      
                 <%= f.label :日時, class: "time_date my-3" %>

@@ -6,13 +6,13 @@
       </div>
       <div class="form-group text-center my-4">
           <% if @log.record_status == "fine"  %>
-          <div class"imag-status"><%= image_tag 'すっきり.png', class:"col-lg-2 col-8 img-fluid" %></div>
+          <div class"imag-status"><%= image_tag 'logs0.png', class:"col-lg-2 col-8 img-fluid" %></div>
           <h3 class="log-text my-4">その調子で頑張ろう！！</h3>
         <% elsif @log.record_status == "low" %>
-          <div class"imag-status"><%= image_tag 'もやもや.png',  class:"col-lg-2 col-8 img-fluid"%></div>
+          <div class"imag-status"><%= image_tag 'logs1.png',  class:"col-lg-2 col-8 img-fluid"%></div>
           <h3 class="log-text my-4">おすすめレシピで綺麗習慣！</h3>
         <% else %>
-          <div class"imag-status"><%= image_tag 'さらさら.png',  class:"col-lg-2 col-8 img-fluid"%></div>
+          <div class"imag-status"><%= image_tag 'logs2.png',  class:"col-lg-2 col-8 img-fluid"%></div>
           <h3 class="log-text my-4">腸を温めて、休息をとろう！</h3>
         <% end %>
         <p>
