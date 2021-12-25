@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  
   def new
     @recipe = Recipe.new
     @recipe.materials.build # #親モデル.子モデル.buildで子モデルのインスタンス作成
@@ -23,7 +24,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @review = Review.new
-    @reviews = @recipe.reviews.all.includes([:user]).order(created_at: :desc).limit(10)
+    @reviews = @recipe.reviews.all.includes([:user])
   end
 
   def edit
@@ -31,6 +32,7 @@ class RecipesController < ApplicationController
     if @recipe.user != current_user
       redirect_to recipes_path
     end
+
   end
 
   def update

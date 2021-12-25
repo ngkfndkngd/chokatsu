@@ -22,8 +22,10 @@
     </div>
     <div class="col-lg-5 col-12 offset-lg-4 offset-1 mt-4 ">
       <div class="link">
-        <%= link_to '編集', edit_log_path(@log.id), class:"btn btn-outline-secondary col-3 offset-1" %>
-        <%= link_to '削除', log_path(@log.id), method:  :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-outline-danger col-3 offset-1" %>
+        <% if @log.user.id == current_user.id %>
+          <%= link_to '編集', edit_log_path(@log.id), class:"btn btn-outline-secondary col-3 offset-1" %>
+          <%= link_to '削除', log_path(@log.id), method:  :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-outline-danger col-3 offset-1" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   def create
     review = Review.new(review_params)
     review.save
-    @reviews = Recipe.find(params[:recipe_id]).reviews.all.includes([:user]).order(created_at: :desc).limit(10)
+    @reviews = Recipe.find(params[:recipe_id]).reviews.all.includes([:user])
     # app/views/review/create.js.erbを参照する
   end
 
