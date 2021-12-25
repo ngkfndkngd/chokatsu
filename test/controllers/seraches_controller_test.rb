@@ -5,5 +5,4 @@ class SerachesControllerTest < ActionDispatch::IntegrationTest
     get seraches_search_url
     assert_response :success
   end
-
 end

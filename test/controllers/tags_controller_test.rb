@@ -5,5 +5,4 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
     get tags_show_url
     assert_response :success
   end
-
 end

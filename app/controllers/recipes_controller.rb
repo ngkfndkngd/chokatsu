@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  
+
   def new
     @recipe = Recipe.new
     @recipe.materials.build # #親モデル.子モデル.buildで子モデルのインスタンス作成
@@ -32,7 +32,6 @@ class RecipesController < ApplicationController
     if @recipe.user != current_user
       redirect_to recipes_path
     end
-
   end
 
   def update
@@ -54,6 +53,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :count, :description, :work, :recipe_image, :user_id, materials_attributes: [:id, :ingredient, :amount, :_destroy],tag_ids: [])
+    params.require(:recipe).permit(:name, :count, :description, :work, :recipe_image, :user_id, materials_attributes: [:id, :ingredient, :amount, :_destroy], tag_ids: [])
   end
 end
