@@ -7,24 +7,73 @@
         <div class="text-center my-5">
           <h4><strong>今日の腸の状態は？</strong></h4>
         </div>
-        <div class="form-group text-center my-4">
+        <div class="row form-group text-center my-4">
           <%= form_with model:@log, url:logs_path, method: :post, local:true do |f| %>
-           <div class="btn-group-toggle" data-toggle="buttons-radio">
-              <label class="btn btn-warning active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :record_status, :fine, {checked: true} %>
                 <%= image_tag 'logs0.png', size: "110x100"%>
                 <%= f.label :すっきり %>
               </label>
-              <label class="btn btn-secondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :record_status, :low , {} %>
                 <%= image_tag 'logs1.png', size: "110x100"%>
                 <%= f.label :もやもや %>
               </label>
-              <label class="btn btn-primary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :record_status, :sick, {} %>
                 <%= image_tag 'logs2.png', size: "110x100"%>
                 <%= f.label :さらさら %>
-              </label></br>      
+              </label></br>
+              <label class="btn btn btn-outline-lightwarning active mx-3 my-2">
+                <%= f.radio_button :colour_status, :light_brown, {checked: true} %>
+                <%= image_tag 'light_brown.png', size: "110x100"%>
+                <%= f.label :きなこ %>
+              </label>
+              <label class="btn btn btn-outline-lightsecondary active mx-3 my-2">
+                <%= f.radio_button :colour_status, :brown, {} %>
+                <%= image_tag 'brown.png', size: "110x100"%>
+                <%= f.label :ソース %>
+              </label>
+              <label class="btn btn btn-outline-lightprimary active mx-3 my-2">
+                <%= f.radio_button :colour_status, :black, {} %>
+                <%= image_tag 'black.png', size: "110x100"%>
+                <%= f.label :チョコレート %>
+              </label>
+              <label class="btn btn btn-outline-lightsecondary active mx-3 my-2">
+                <%= f.radio_button :colour_status, :orange, {} %>
+                <%= image_tag 'orange.png', size: "110x100"%>
+                <%= f.label :オレンジ %>
+              </label>
+              <label class="btn btn btn-outline-lightprimary active mx-3 my-2">
+                <%= f.radio_button :colour_status, :green, {} %>
+                <%= image_tag 'green.png', size: "110x100"%>
+                <%= f.label :ほうれん草 %>
+              </label></br>
+              <label class="btn btn-light active mx-3 my-2">
+                <%= f.radio_button :shape_status, :big, {checked: true} %>
+                <%= image_tag 'big.png', size: "110x100"%>
+                <%= f.label :つるつるバナナ %>
+              </label>
+              <label class="btn btn-light active mx-3 my-2">
+                <%= f.radio_button :shape_status, :small, {} %>
+          　　　　<%= image_tag 'small.png', size: "110x100"%>
+                <%= f.label :コロコロ %>
+              </label>
+              <label class="btn btn-light active mx-3 my-2">
+                <%= f.radio_button :shape_status, :hard, {} %>
+          　　　　<%= image_tag 'hard.png', size: "110x100"%>
+                <%= f.label :かちかちバナナ %>
+              </label>
+              <label class="btn btn-light active mx-3 my-2">
+                <%= f.radio_button :shape_status, :soft, {} %>
+          　　　　<%= image_tag 'soft.png', size: "110x100"%>
+                <%= f.label :ふわふわ %>
+              </label>
+              <label class="btn btn-light active mx-3 my-2">
+                <%= f.radio_button :shape_status, :water, {} %>
+                <%= image_tag 'water.png', size: "110x100"%>
+                <%= f.label :ビチャビチャ %>
+              </label></br>
                 <%= f.label :日時, class: "time_date my-3" %>
                 <%= f.datetime_select :start_time %></br>
                 
