@@ -8,54 +8,54 @@
         <strong>時間</strong><%= @log.start_time.strftime("%Y-%m-%d %H:%M") %>
       </p>
       <table class="table table-hover table-inverse">
-              <thead class="text-center">
-                  <th>スッキリ感</th>
-                  <th>色</th>
-                  <th>形</th>
-              </thead>
-              <tbody class="text-center">
-                <tr>
-                  <td>
-                    <% if @log.fine?  %>
-                      <%= image_tag 'logs0.png',class:"col-lg-4 img-fluid" %>
-                    <% elsif @log.low? %>
-                      <%= image_tag 'logs1.png',class:"col-lg-4 img-fluid" %>
-                    <% else %>
-                      <%= image_tag 'logs2.png',class:"col-lg-4 img-fluid" %>
-                    <% end %>
-                    <h6><%= @log.record_status_i18n %></h6>
-                  </td>
-                  <td>
-                    <% if @log.light_brown?  %>
-                      <%= image_tag 'light_brown.png',class:"col-lg-4 img-fluid" %>
-                    <% elsif @log.brown? %>
-                      <%= image_tag 'brown.png',class:"col-lg-4 img-fluid" %>
-                    <% elsif @log.black? %>
-                      <%= image_tag 'black.png',class:"col-lg-4 img-fluid" %>
-                    <% elsif @log.orange? %>
-                      <%= image_tag 'orange.png',class:"col-lg-4 img-fluid" %>
-                    <% else %>
-                      <%= image_tag 'green.png',class:"col-lg-4 img-fluid" %>
-                    <% end %>
-                    <h6><%= @log.colour_status_i18n %></h6>
-                  </td>
-                  <td>
-                    <% if @log.big?  %>
-                      <%= image_tag 'big.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
-                    <% elsif @log.small? %>
-                      <%= image_tag 'small.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
-                    <% elsif @log.hard? %>
-                      <%= image_tag 'hard.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
-                    <% elsif @log.soft? %>
-                      <%= image_tag 'soft.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
-                    <% else %>
-                      <%= image_tag 'water.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
-                    <% end %>
-                    <h6><%= @log.shape_status_i18n %></h6>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <thead class="text-center">
+          <th>スッキリ感</th>
+          <th>色</th>
+          <th>形</th>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td>
+              <% if @log.fine?  %>
+                <%= image_tag 'logs0.png',class:"col-lg-4 img-fluid" %>
+              <% elsif @log.low? %>
+                <%= image_tag 'logs1.png',class:"col-lg-4 img-fluid" %>
+              <% else %>
+                <%= image_tag 'logs2.png',class:"col-lg-4 img-fluid" %>
+              <% end %>
+              <h6><%= @log.record_status_i18n %></h6>
+            </td>
+            <td>
+              <% if @log.light_brown?  %>
+                <%= image_tag 'light_brown.png',class:"col-lg-4 img-fluid" %>
+              <% elsif @log.brown? %>
+                <%= image_tag 'brown.png',class:"col-lg-4 img-fluid" %>
+              <% elsif @log.black? %>
+                <%= image_tag 'black.png',class:"col-lg-4 img-fluid" %>
+              <% elsif @log.orange? %>
+                <%= image_tag 'orange.png',class:"col-lg-4 img-fluid" %>
+              <% else %>
+                <%= image_tag 'green.png',class:"col-lg-4 img-fluid" %>
+              <% end %>
+              <h6><%= @log.colour_status_i18n %></h6>
+            </td>
+            <td>
+              <% if @log.big?  %>
+                <%= image_tag 'big.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+              <% elsif @log.small? %>
+                <%= image_tag 'small.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+              <% elsif @log.hard? %>
+                <%= image_tag 'hard.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+              <% elsif @log.soft? %>
+                <%= image_tag 'soft.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+              <% else %>
+                <%= image_tag 'water.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+              <% end %>
+              <h6><%= @log.shape_status_i18n %></h6>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="col-lg-4 offset-lg-4 text-center my-1">
       <% if @log.fine?  %>
@@ -77,32 +77,31 @@
   </div>
 </div>
 
-<!--<%= @log.array %>-->
 
-<canvas id="myChart"></canvas>
-<script>
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-  type: 'radar',
-  data: {
-    labels: ["スッキリ感", "色", "形"],
-    datasets: [
-        {
-        label: 'ウン!スコア',
-        backgroundColor: 'rgba(255,127,80,0.2)',
-        borderColor: 'rgba(255,127,80)',
-        data: [<%= @log.record_status_score %>, <%= @log.colour_status_score %>, <%= @log.shape_status_score %>]
-        }
-    ]
-  },
-  options: {
-      scale: {
-          ticks: {
-              suggestedMin: 0,
-              suggestedMax: 5,
-              stepSize: 1,
-          }
-      }
-  }
-});
-</script>
+<!--<canvas id="myChart"></canvas>-->
+<!--<script>-->
+<!--var ctx = document.getElementById("myChart");-->
+<!--var myChart = new Chart(ctx, {-->
+<!--  type: 'radar',-->
+<!--  data: {-->
+<!--    labels: ["スッキリ感", "色", "形"],-->
+<!--    datasets: [-->
+<!--        {-->
+<!--        label: 'ウン!スコア',-->
+<!--        backgroundColor: 'rgba(255,127,80,0.2)',-->
+<!--        borderColor: 'rgba(255,127,80)',-->
+<!--        data: [<%#= @log.record_status_score %>, <%#= @log.colour_status_score %>, <%#= @log.shape_status_score %>]-->
+<!--        }-->
+<!--    ]-->
+<!--  },-->
+<!--  options: {-->
+<!--      scale: {-->
+<!--          ticks: {-->
+<!--              suggestedMin: 0,-->
+<!--              suggestedMax: 10,-->
+<!--              stepSize: 1,-->
+<!--          }-->
+<!--      }-->
+<!--  }-->
+<!--});-->
+<!--</script>-->

@@ -8,9 +8,9 @@ class Log < ApplicationRecord
 
   def record_status_score
     if fine?
-      5
+      10
     elsif low?
-      3
+      5
     else
       0
     end
@@ -18,25 +18,25 @@ class Log < ApplicationRecord
 
   def colour_status_score
     if light_brown?
-      5
+      10
     elsif brown?
-      4
+      8
     elsif black?
-      3
+      5
     elsif orange?
-      2
+      0
     else
-      1
+      0
     end
   end
 
   def shape_status_score
     if big?
-      5
+      10
     elsif small?
       4
     elsif hard?
-      3
+      5
     elsif soft?
       2
     else
@@ -44,8 +44,8 @@ class Log < ApplicationRecord
     end
   end
 
-  # def array
-  #   array = record_status_score,colour_status_score,shape_status_score
-  #   array.sum.fdiv(array.length)
-  # end
+  def array
+    array = record_status_score,colour_status_score,shape_status_score
+    array.sum.fdiv(array.length).round()
+  end
 end
