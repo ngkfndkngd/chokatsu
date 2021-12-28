@@ -4,24 +4,70 @@
       <div class="col-lg-4 offset-lg-4 text-center my-4">
         <h4 class="log-title"><strong><%= current_user.name%>さん 今日の腸の調子は？</strong></h4>
       </div>
-      <div class="form-group text-center my-4">
-          <% if @log.record_status == "fine"  %>
-          <div class"imag-status"><%= image_tag 'logs0.png', class:"col-lg-2 col-8 img-fluid" %></div>
-          <h3 class="log-text my-4">その調子で頑張ろう！！</h3>
-        <% elsif @log.record_status == "low" %>
-          <div class"imag-status"><%= image_tag 'logs1.png',  class:"col-lg-2 col-8 img-fluid"%></div>
-          <h3 class="log-text my-4">おすすめレシピで綺麗習慣！</h3>
-        <% else %>
-          <div class"imag-status"><%= image_tag 'logs2.png',  class:"col-lg-2 col-8 img-fluid"%></div>
-          <h3 class="log-text my-4">腸を温めて、休息をとろう！</h3>
-        <% end %>
-        <p>
-         <strong>時間</strong><%= @log.start_time.strftime("%Y-%m-%d %H:%M") %>
-        </p>
-      </div>
+      <p>
+        <strong>時間</strong><%= @log.start_time.strftime("%Y-%m-%d %H:%M") %>
+      </p>
+      <table class="table table-hover table-inverse">
+              <thead class="text-center">
+                  <th>スッキリ感</th>
+                  <th>色</th>
+                  <th>形</th>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td>
+                    <% if @log.fine?  %>
+                      <%= image_tag 'logs0.png',class:"col-lg-4 img-fluid" %>
+                    <% elsif @log.low? %>
+                      <%= image_tag 'logs1.png',class:"col-lg-4 img-fluid" %>
+                    <% else %>
+                      <%= image_tag 'logs2.png',class:"col-lg-4 img-fluid" %>
+                    <% end %>
+                    <h6><%= @log.record_status_i18n %></h6>
+                  </td>
+                  <td>
+                    <% if @log.light_brown?  %>
+                      <%= image_tag 'light_brown.png',class:"col-lg-4 img-fluid" %>
+                    <% elsif @log.brown? %>
+                      <%= image_tag 'brown.png',class:"col-lg-4 img-fluid" %>
+                    <% elsif @log.black? %>
+                      <%= image_tag 'black.png',class:"col-lg-4 img-fluid" %>
+                    <% elsif @log.orange? %>
+                      <%= image_tag 'orange.png',class:"col-lg-4 img-fluid" %>
+                    <% else %>
+                      <%= image_tag 'green.png',class:"col-lg-4 img-fluid" %>
+                    <% end %>
+                    <h6><%= @log.colour_status_i18n %></h6>
+                  </td>
+                  <td>
+                    <% if @log.big?  %>
+                      <%= image_tag 'big.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+                    <% elsif @log.small? %>
+                      <%= image_tag 'small.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+                    <% elsif @log.hard? %>
+                      <%= image_tag 'hard.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+                    <% elsif @log.soft? %>
+                      <%= image_tag 'soft.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+                    <% else %>
+                      <%= image_tag 'water.png',class:"col-lg-4 my-lg-5 my-3 img-fluid" %>
+                    <% end %>
+                    <h6><%= @log.shape_status_i18n %></h6>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
     </div>
-    <div class="col-lg-5 col-12 offset-lg-4 offset-1 mt-4 ">
-      <div class="link">
+    <div class="col-lg-4 offset-lg-4 text-center my-1">
+      <% if @log.fine?  %>
+        <h3 class="log-text my-4">その調子で頑張ろう！！</h3>
+      <% elsif @log.low? %>
+        <h3 class="log-text my-4">おすすめレシピで綺麗習慣！</h3>
+      <% else %>
+        <h3 class="log-text my-4">腸を温めて、休息をとろう！</h3>
+      <% end %>
+    </div>
+    <div class="col-lg-5 col-12 offset-lg-4 offset-1 ">
+      <div class="link my-5">
         <% if @log.user.id == current_user.id %>
           <%= link_to '編集', edit_log_path(@log.id), class:"btn btn-outline-secondary col-3 offset-1" %>
           <%= link_to '削除', log_path(@log.id), method:  :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-outline-danger col-3 offset-1" %>
@@ -30,3 +76,33 @@
     </div>
   </div>
 </div>
+
+<!--<%= @log.array %>-->
+
+<canvas id="myChart"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: ["スッキリ感", "色", "形"],
+    datasets: [
+        {
+        label: 'ウン!スコア',
+        backgroundColor: 'rgba(255,127,80,0.2)',
+        borderColor: 'rgba(255,127,80)',
+        data: [<%= @log.record_status_score %>, <%= @log.colour_status_score %>, <%= @log.shape_status_score %>]
+        }
+    ]
+  },
+  options: {
+      scale: {
+          ticks: {
+              suggestedMin: 0,
+              suggestedMax: 5,
+              stepSize: 1,
+          }
+      }
+  }
+});
+</script>

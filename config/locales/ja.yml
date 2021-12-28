@@ -5,6 +5,18 @@ ja:
         fine: "すっきり"
         low: "もやもや"
         sick: "さらさら"
+      colour_status:
+        light_brown: "きなこ"
+        brown: "ソース"
+        black: "チョコレート"
+        orange: "オレンジ"
+        green: "ほうれん草"
+      shape_status:
+        big: "つるつるバナナ"
+        small: "コロコロ"
+        hard: "カチカチバナナ"
+        soft: "ふわふわ"
+        water: "ビチャビチャ"
   activerecord:
     errors:
       messages:

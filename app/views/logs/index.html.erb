@@ -9,74 +9,74 @@
         </div>
         <div class="row form-group text-center my-4">
           <%= form_with model:@log, url:logs_path, method: :post, local:true do |f| %>
-              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-success active mx-3 my-2">
                 <%= f.radio_button :record_status, :fine, {checked: true} %>
-                <%= image_tag 'logs0.png', size: "110x100"%>
+                <%= image_tag 'logs0.png',class:"col-lg-7 col-5 img-fluid" %>
                 <%= f.label :すっきり %>
               </label>
-              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-success active mx-3 my-2">
                 <%= f.radio_button :record_status, :low , {} %>
-                <%= image_tag 'logs1.png', size: "110x100"%>
+                <%= image_tag 'logs1.png',class:"col-lg-7 col-5 img-fluid" %>
                 <%= f.label :もやもや %>
               </label>
-              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-success active mx-3 my-2">
                 <%= f.radio_button :record_status, :sick, {} %>
-                <%= image_tag 'logs2.png', size: "110x100"%>
+                <%= image_tag 'logs2.png',class:"col-lg-7 col-5 img-fluid" %>
                 <%= f.label :さらさら %>
               </label></br>
-              <label class="btn btn btn-outline-lightwarning active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :colour_status, :light_brown, {checked: true} %>
-                <%= image_tag 'light_brown.png', size: "110x100"%>
-                <%= f.label :きなこ %>
+                <%= image_tag 'light_brown.png',class:"col-lg-5 col-5 img-fluid" %>
+                <%= f.label :きなこ　　　 %>
               </label>
-              <label class="btn btn btn-outline-lightsecondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :colour_status, :brown, {} %>
-                <%= image_tag 'brown.png', size: "110x100"%>
-                <%= f.label :ソース %>
+                <%= image_tag 'brown.png', class:"col-lg-5 col-5 img-fluid" %>
+                <%= f.label :ソース　　　 %>
               </label>
-              <label class="btn btn btn-outline-lightprimary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :colour_status, :black, {} %>
-                <%= image_tag 'black.png', size: "110x100"%>
+                <%= image_tag 'black.png', class:"col-lg-5 col-5 img-fluid" %>
                 <%= f.label :チョコレート %>
               </label>
-              <label class="btn btn btn-outline-lightsecondary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :colour_status, :orange, {} %>
-                <%= image_tag 'orange.png', size: "110x100"%>
-                <%= f.label :オレンジ %>
+                <%= image_tag 'orange.png', class:"col-lg-5 col-5 img-fluid" %>
+                <%= f.label :オレンジ　　 %>
               </label>
-              <label class="btn btn btn-outline-lightprimary active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-outline-secondary active mx-3 my-2">
                 <%= f.radio_button :colour_status, :green, {} %>
-                <%= image_tag 'green.png', size: "110x100"%>
-                <%= f.label :ほうれん草 %>
+                <%= image_tag 'green.png', class:"col-lg-5 col-5 img-fluid" %>
+                <%= f.label :ほうれん草　 %>
               </label></br>
-              <label class="btn btn-light active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-light active mx-3 my-2">
                 <%= f.radio_button :shape_status, :big, {checked: true} %>
-                <%= image_tag 'big.png', size: "110x100"%>
+                <%= image_tag 'big.png', class:"col-lg-7 col-5 img-fluid" %>
                 <%= f.label :つるつるバナナ %>
               </label>
-              <label class="btn btn-light active mx-3 my-2">
+               <label class="col-lg-2 col-8 btn btn-light active mx-3 my-2">
                 <%= f.radio_button :shape_status, :small, {} %>
-          　　　　<%= image_tag 'small.png', size: "110x100"%>
+                <%= image_tag 'small.png', class:"col-lg-8 col-5 img-fluid"%>
                 <%= f.label :コロコロ %>
               </label>
-              <label class="btn btn-light active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-light active mx-3 my-2">
                 <%= f.radio_button :shape_status, :hard, {} %>
-          　　　　<%= image_tag 'hard.png', size: "110x100"%>
+                <%= image_tag 'hard.png', class:"col-lg-7 col-5 img-fluid"%>
                 <%= f.label :かちかちバナナ %>
               </label>
-              <label class="btn btn-light active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-light active mx-3 my-2">
                 <%= f.radio_button :shape_status, :soft, {} %>
-          　　　　<%= image_tag 'soft.png', size: "110x100"%>
-                <%= f.label :ふわふわ %>
+                <%= image_tag 'soft.png',class:"col-lg-7 col-5 img-fluid"%>
+                <%= f.label :ふわふわ　 %>
               </label>
-              <label class="btn btn-light active mx-3 my-2">
+              <label class="col-lg-2 col-8 btn btn-light active mx-3 my-2">
                 <%= f.radio_button :shape_status, :water, {} %>
-                <%= image_tag 'water.png', size: "110x100"%>
+                <%= image_tag 'water.png',class:"col-lg-7 col-5 img-fluid" %>
                 <%= f.label :ビチャビチャ %>
               </label></br>
                 <%= f.label :日時, class: "time_date my-3" %>
                 <%= f.datetime_select :start_time %></br>
-                
+
                 <%= f.submit "登録", class: 'btn btn-outline-secondary col-3' %>
             </div>
           <% end %>

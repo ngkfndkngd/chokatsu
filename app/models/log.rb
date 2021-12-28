@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
   belongs_to :user
   enum record_status: { fine: 0, low: 1, sick: 2 }
-  
+
   enum colour_status: { light_brown: 0, brown: 1, black: 2, orange: 3, green: 4 }
 
   enum shape_status: { big: 0, small: 1, hard: 2, soft: 3, water: 4 }
@@ -43,4 +43,9 @@ class Log < ApplicationRecord
       1
     end
   end
+
+  # def array
+  #   array = record_status_score,colour_status_score,shape_status_score
+  #   array.sum.fdiv(array.length)
+  # end
 end
