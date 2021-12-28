@@ -82,6 +82,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'cocoon'
 gem "simple_calendar", "~> 2.0"
+gem 'chart-js-rails', '~> 0.1.4'
 
 gem 'dotenv-rails'
 group :production do

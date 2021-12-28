@@ -76,32 +76,32 @@
     </div>
   </div>
 </div>
+<%= @log.array %>
 
-
-<!--<canvas id="myChart"></canvas>-->
-<!--<script>-->
-<!--var ctx = document.getElementById("myChart");-->
-<!--var myChart = new Chart(ctx, {-->
-<!--  type: 'radar',-->
-<!--  data: {-->
-<!--    labels: ["スッキリ感", "色", "形"],-->
-<!--    datasets: [-->
-<!--        {-->
-<!--        label: 'ウン!スコア',-->
-<!--        backgroundColor: 'rgba(255,127,80,0.2)',-->
-<!--        borderColor: 'rgba(255,127,80)',-->
-<!--        data: [<%#= @log.record_status_score %>, <%#= @log.colour_status_score %>, <%#= @log.shape_status_score %>]-->
-<!--        }-->
-<!--    ]-->
-<!--  },-->
-<!--  options: {-->
-<!--      scale: {-->
-<!--          ticks: {-->
-<!--              suggestedMin: 0,-->
-<!--              suggestedMax: 10,-->
-<!--              stepSize: 1,-->
-<!--          }-->
-<!--      }-->
-<!--  }-->
-<!--});-->
-<!--</script>-->
+<canvas id="myChart"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: ["スッキリ感", "色", "形"],
+    datasets: [
+        {
+        label: 'ウン!スコア',
+        backgroundColor: 'rgba(255,127,80,0.2)',
+        borderColor: 'rgba(255,127,80)',
+        data: [<%= @log.record_status_score %>, <%= @log.colour_status_score %>, <%= @log.shape_status_score %>]
+        }
+    ]
+  },
+  options: {
+      scale: {
+          ticks: {
+              suggestedMin: 0,
+              suggestedMax: 10,
+              stepSize: 1,
+          }
+      }
+  }
+});
+</script>
