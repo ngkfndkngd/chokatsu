@@ -73,14 +73,4 @@ $('#tab-menu a').on('click', function(event) {
   event.preventDefault();
 });
 
-// //ページャーをクリックしたときの動作
-// $('.tab_sub li').click(function(){
-// //クリックしたページャーのindexを取得
-// var index = $('.inner.active .tab_sub li').index(this);
- 
-// $('.inner.active .tab_sub li').removeClass('active');
-// $(this).addClass('active');
-// });
-
-
 })
