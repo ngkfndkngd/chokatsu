@@ -43,7 +43,7 @@ class Log < ApplicationRecord
       1
     end
   end
-
+# グラフの計算
   def array
     array = record_status_score,colour_status_score,shape_status_score
     array.sum.fdiv(array.length).round()
