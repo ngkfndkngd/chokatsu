@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
     resources :favorites, only: [:index, :create]
   end
-  # get 'tag' => 'tags#show'
+  
   resources :tags, only: [:show]
   delete "recipe/:recipe_id/favorite", to: "favorites#destroy", as: "recipe_favorite"
 end
