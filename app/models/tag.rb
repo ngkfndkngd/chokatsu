@@ -3,6 +3,6 @@ class Tag < ApplicationRecord
   has_many :recipe_tags, dependent: :destroy
   has_many :recipes, through: :recipe_tags
   # 中間テーブルであるrecipe_tagモデルを介してのrecipeモデルとの関連付けを記述。
-
+  # 画像を読み込むメゾット
   attachment :tag_image
 end

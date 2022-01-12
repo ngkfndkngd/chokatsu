@@ -26,8 +26,8 @@ class Recipe < ApplicationRecord
     favorites.where(user_id: user).exists?
   end
   
-  
-  def self.create_recipe_ranks #recipeクラスからデータを取ってくる処理なのでクラスメソッド！
+   #recipeクラスからデータを取ってくる処理,クラスメソッド！
+  def self.create_recipe_ranks
     Recipe.includes([:user]).find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(4).pluck(:recipe_id))
   end
   
