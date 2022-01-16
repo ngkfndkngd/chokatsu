@@ -1,4 +1,4 @@
-# Let's chokatsu
+# 腸活レシピ
 - URL:http://chokatsu.xyz/
 
 
