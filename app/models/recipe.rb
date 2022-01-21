@@ -27,6 +27,7 @@ class Recipe < ApplicationRecord
   end
   
    #recipeクラスからデータを取ってくる処理,クラスメソッド！
+   # 投稿のお気に入り登録順でランキング
   def self.create_recipe_ranks
     Recipe.includes([:user]).find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(4).pluck(:recipe_id))
   end
