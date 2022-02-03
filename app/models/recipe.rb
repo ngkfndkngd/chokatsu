@@ -31,5 +31,4 @@ class Recipe < ApplicationRecord
   def self.create_recipe_ranks
     Recipe.includes([:user]).find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(4).pluck(:recipe_id))
   end
-  
 end
