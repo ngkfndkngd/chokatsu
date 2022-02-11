@@ -1,5 +1,6 @@
 class Log < ApplicationRecord
   belongs_to :user
+  
   enum record_status: { fine: 0, low: 1, sick: 2 }
 
   enum colour_status: { light_brown: 0, brown: 1, black: 2, orange: 3, green: 4 }
